@@ -1,0 +1,22 @@
+{
+  "name": "loadero_controller",
+  "version": "v0.32.1",
+  "description": "This_application_serves_main_Loaderos_endpoints_that_can_be_used_tomanipulate_test_data_and_other_services",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}
