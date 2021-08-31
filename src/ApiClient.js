@@ -42,8 +42,7 @@ export class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'ApiKeyAuth': {type: 'apiKey', 'in': 'header', name: 'LoaderoAuth'},
-            'basic': {type: 'basic'}
+            'ApiKeyAuth': {type: 'apiKey', 'in': 'header', name: 'LoaderoAuth'}
         }
 
         /**

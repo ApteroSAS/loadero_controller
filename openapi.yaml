@@ -9777,9 +9777,6 @@ components:
           schema:
             $ref: '#/components/schemas/ValidationResponse'
   securitySchemes:
-    basic:
-      type: http
-      scheme: basic
     ApiKeyAuth:
       type: apiKey
       name: LoaderoAuth

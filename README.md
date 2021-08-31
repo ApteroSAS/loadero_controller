@@ -251,7 +251,3 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: LoaderoAuth
 - **Location**: HTTP header
 
-### basic
-
-- **Type**: HTTP basic authentication
-
