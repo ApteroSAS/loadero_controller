@@ -14,5 +14,3 @@ Name | Type | Description | Notes
 **recordAudio** | **Boolean** |  | [optional] 
 **runId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

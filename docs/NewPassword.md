@@ -5,5 +5,3 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **confirmPassword** | **String** |  | 
 **password** | **String** |  | 
-
-

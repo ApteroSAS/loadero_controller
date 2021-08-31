@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **downloads** | [**ArtifactInfo**](ArtifactInfo.md) |  | [optional] 
 **screenshots** | [**ArtifactInfo**](ArtifactInfo.md) |  | [optional] 
 **video** | [**ArtifactInfo**](ArtifactInfo.md) |  | [optional] 
-
-

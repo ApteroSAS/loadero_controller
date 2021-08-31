@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**readTest**](TestApi.md#readTest) | **GET** /projects/{projectID}/tests/{testID}/ | Read test info
 [**updateTest**](TestApi.md#updateTest) | **PUT** /projects/{projectID}/tests/{testID}/ | Update existing test
 
-
 <a name="createTest"></a>
 # **createTest**
 > Test createTest(name, startInterval, participantTimeout, mode, incrementStrategy, script, projectID, opts)
@@ -22,32 +21,24 @@ This endpoint creates new test with given data.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
-
-var name = "name_example"; // String | 
-
-var startInterval = 789; // Number | 
-
-var participantTimeout = 789; // Number | 
-
-var mode = "mode_example"; // String | 
-
-var incrementStrategy = "incrementStrategy_example"; // String | 
-
-var script = "script_example"; // String | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.TestApi();
+let name = "name_example"; // String | 
+let startInterval = 789; // Number | 
+let participantTimeout = 789; // Number | 
+let mode = "mode_example"; // String | 
+let incrementStrategy = "incrementStrategy_example"; // String | 
+let script = "script_example"; // String | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example", // String | 
   'id': 789, // Number | readonly: true
   'created': new Date("2013-10-20T19:20:30+01:00"), // Date | readonly: true
@@ -58,15 +49,13 @@ var opts = {
   'groupCount': 789, // Number | readonly: true
   'participantCount': 789 // Number | readonly: true
 };
-
-var callback = function(error, data, response) {
+apiInstance.createTest(name, startInterval, participantTimeout, mode, incrementStrategy, script, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createTest(name, startInterval, participantTimeout, mode, incrementStrategy, script, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -100,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteTest"></a>
@@ -113,30 +102,26 @@ This endpoint deletes test. Project and test must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
+let apiInstance = new LoaderoController.TestApi();
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
 
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.deleteTest(testID, projectID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteTest(testID, projectID, callback);
+});
 ```
 
 ### Parameters
@@ -156,7 +141,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="duplicateTest"></a>
@@ -165,38 +150,33 @@ null (empty response body)
 
 Duplicate existing test
 
-This endpoint duplicates given test. If no copy name is provided an \"Copy of\" prefix will be applied to the test name. Project and test must be previously created.
+This endpoint duplicates given test. If no copy name is provided an \&quot;Copy of\&quot; prefix will be applied to the test name. Project and test must be previously created.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
-  'body': new LoaderoController.Body(), // Body | 
+let apiInstance = new LoaderoController.TestApi();
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.TestIDCopyBody(), // TestIDCopyBody | 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.duplicateTest(testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.duplicateTest(testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -205,7 +185,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **testID** | **Number**|  | 
  **projectID** | **Number**|  | 
- **body** | [**Body**](.md)|  | [optional] 
+ **body** | [**TestIDCopyBody**](TestIDCopyBody.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
 
 ### Return type
@@ -223,7 +203,7 @@ Name | Type | Description  | Notes
 
 <a name="readAllTests"></a>
 # **readAllTests**
-> Object readAllTests(projectID, opts)
+> InlineResponse2004 readAllTests(projectID, opts)
 
 Get all existing tests for project
 
@@ -231,20 +211,18 @@ This endpoint retrieves all test info. Project must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.TestApi();
+let projectID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -256,15 +234,13 @@ var opts = {
   'filterParticipantTimeoutFrom': "filterParticipantTimeoutFrom_example", // String | 
   'filterParticipantTimeoutTo': "filterParticipantTimeoutTo_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllTests(projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllTests(projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -285,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -293,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readTest"></a>
@@ -306,33 +282,28 @@ This endpoint retrieves test info. Project and test must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.TestApi();
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readTest(testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readTest(testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -353,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateTest"></a>
@@ -366,34 +337,25 @@ This endpoint updates test with given properties. Project and test must be previ
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.TestApi();
-
-var name = "name_example"; // String | 
-
-var startInterval = 789; // Number | 
-
-var participantTimeout = 789; // Number | 
-
-var mode = "mode_example"; // String | 
-
-var incrementStrategy = "incrementStrategy_example"; // String | 
-
-var script = "script_example"; // String | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.TestApi();
+let name = "name_example"; // String | 
+let startInterval = 789; // Number | 
+let participantTimeout = 789; // Number | 
+let mode = "mode_example"; // String | 
+let incrementStrategy = "incrementStrategy_example"; // String | 
+let script = "script_example"; // String | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example", // String | 
   'id': 789, // Number | readonly: true
   'created': new Date("2013-10-20T19:20:30+01:00"), // Date | readonly: true
@@ -404,15 +366,13 @@ var opts = {
   'groupCount': 789, // Number | readonly: true
   'participantCount': 789 // Number | readonly: true
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateTest(name, startInterval, participantTimeout, mode, incrementStrategy, script, testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateTest(name, startInterval, participantTimeout, mode, incrementStrategy, script, testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -447,6 +407,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

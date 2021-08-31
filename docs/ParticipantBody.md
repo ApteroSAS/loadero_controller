@@ -19,5 +19,3 @@ Name | Type | Description | Notes
 **testId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
 **videoFeed** | **String** |  | [optional] 
-
-

@@ -13,5 +13,3 @@ Name | Type | Description | Notes
 **networkTx** | [**NetworkParams**](NetworkParams.md) |  | [optional] 
 **readTime** | **Date** |  | [optional] 
 **resultId** | **Number** |  | [optional] 
-
-

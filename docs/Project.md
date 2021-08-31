@@ -13,5 +13,3 @@ Name | Type | Description | Notes
 **subscriptionId** | **Number** |  | [optional] 
 **trialExpired** | **Boolean** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

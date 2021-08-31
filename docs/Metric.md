@@ -17,5 +17,3 @@ Name | Type | Description | Notes
 **perc99th** | **Number** |  | [optional] 
 **stddev** | **Number** |  | [optional] 
 **value** | **String** |  | [optional] 
-
-

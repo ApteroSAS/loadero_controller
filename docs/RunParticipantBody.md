@@ -20,5 +20,3 @@ Name | Type | Description | Notes
 **runId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
 **videoFeed** | **String** |  | [optional] 
-
-

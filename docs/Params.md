@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **mediaType** | **String** |  | [optional] 
 **network** | **String** |  | [optional] 
 **videoFeed** | **String** |  | [optional] 
-
-

@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **runAssertId** | **Number** |  | [optional] 
 **skip** | **Number** |  | [optional] 
 **status** | **String** |  | [optional] 
-
-

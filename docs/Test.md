@@ -16,5 +16,3 @@ Name | Type | Description | Notes
 **scriptFileId** | **Number** |  | [optional] 
 **startInterval** | **Number** |  | 
 **updated** | **Date** |  | [optional] 
-
-

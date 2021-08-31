@@ -8,10 +8,9 @@ Method | HTTP request | Description
 [**readTestResult**](ResultApi.md#readTestResult) | **GET** /projects/{projectID}/tests/{testID}/runs/{runID}/results/{resultID}/ | Read single test run result
 [**readTestResultStatistics**](ResultApi.md#readTestResultStatistics) | **GET** /projects/{projectID}/tests/{testID}/runs/{runID}/results/statistics/ | Read all test result statistics
 
-
 <a name="readAllTestResults"></a>
 # **readAllTestResults**
-> Object readAllTestResults(runID, testID, projectID, opts)
+> InlineResponse2002 readAllTestResults(runID, testID, projectID, opts)
 
 Read all test run results
 
@@ -19,24 +18,20 @@ This endpoint retrieves all test run results. Project, test, run must be previou
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ResultApi();
-
-var runID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ResultApi();
+let runID = 789; // Number | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -61,15 +56,13 @@ var opts = {
   'filterSeleniumResult': "filterSeleniumResult_example", // String | 
   'filterDone': "filterDone_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllTestResults(runID, testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllTestResults(runID, testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -105,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -113,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readTestResult"></a>
@@ -126,37 +119,30 @@ This endpoint retrieves single test run result info. Project, test, run and resu
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ResultApi();
-
-var resultID = 789; // Number | 
-
-var runID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ResultApi();
+let resultID = 789; // Number | 
+let runID = 789; // Number | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readTestResult(resultID, runID, testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readTestResult(resultID, runID, testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -179,12 +165,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readTestResultStatistics"></a>
 # **readTestResultStatistics**
-> Object readTestResultStatistics(runID, testID, projectID, opts)
+> InlineResponse2003 readTestResultStatistics(runID, testID, projectID, opts)
 
 Read all test result statistics
 
@@ -192,35 +178,29 @@ This endpoint retrieves all test result statisctics. Project, test and run must 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ResultApi();
-
-var runID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ResultApi();
+let runID = 789; // Number | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readTestResultStatistics(runID, testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readTestResultStatistics(runID, testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -234,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -242,6 +222,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

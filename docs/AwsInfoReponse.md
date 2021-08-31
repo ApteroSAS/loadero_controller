@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **logBucket** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

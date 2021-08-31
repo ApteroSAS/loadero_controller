@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**readFile**](FileApi.md#readFile) | **GET** /projects/{projectID}/files/{fileID}/ | Read file info.
 
-
 <a name="readFile"></a>
 # **readFile**
 > File readFile(fileID, projectID, opts)
@@ -17,33 +16,28 @@ This endpoint retrieves file info.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.FileApi();
-
-var fileID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.FileApi();
+let fileID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readFile(fileID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readFile(fileID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -64,6 +58,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

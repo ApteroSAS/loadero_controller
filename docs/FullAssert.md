@@ -11,5 +11,3 @@ Name | Type | Description | Notes
 **preconditions** | [**[AssertPrecondition]**](AssertPrecondition.md) |  | [optional] 
 **testId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

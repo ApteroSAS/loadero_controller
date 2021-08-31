@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **projectId** | **Number** |  | [optional] 
 **role** | **String** |  | 
 **updated** | **Date** |  | [optional] 
-
-

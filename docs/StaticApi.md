@@ -9,10 +9,9 @@ Method | HTTP request | Description
 [**readMetricPath**](StaticApi.md#readMetricPath) | **GET** /statics/metric_path/ | Read all metric path info
 [**readStaticResource**](StaticApi.md#readStaticResource) | **GET** /statics/{resource}/ | Read all specified static resource info
 
-
 <a name="readAllStaticTypes"></a>
 # **readAllStaticTypes**
-> ['String'] readAllStaticTypes()
+> [&#x27;String&#x27;] readAllStaticTypes()
 
 Read all static type info
 
@@ -20,25 +19,23 @@ This endpoint retrieves all static type info
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.StaticApi();
-
-var callback = function(error, data, response) {
+let apiInstance = new LoaderoController.StaticApi();
+apiInstance.readAllStaticTypes((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllStaticTypes(callback);
+});
 ```
 
 ### Parameters
@@ -46,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**['String']**
+**[&#x27;String&#x27;]**
 
 ### Authorization
 
@@ -54,12 +51,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readAllStatics"></a>
 # **readAllStatics**
-> {'String': [BaseClassificator]} readAllStatics()
+> {&#x27;String&#x27;: [BaseClassificator]} readAllStatics()
 
 Read all static resource info
 
@@ -67,25 +64,23 @@ This endpoint retrieves all static resource info
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.StaticApi();
-
-var callback = function(error, data, response) {
+let apiInstance = new LoaderoController.StaticApi();
+apiInstance.readAllStatics((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllStatics(callback);
+});
 ```
 
 ### Parameters
@@ -93,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**{'String': [BaseClassificator]}**
+**{&#x27;String&#x27;: [BaseClassificator]}**
 
 ### Authorization
 
@@ -101,12 +96,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readMetricPath"></a>
 # **readMetricPath**
-> ['String'] readMetricPath()
+> [&#x27;String&#x27;] readMetricPath()
 
 Read all metric path info
 
@@ -114,25 +109,23 @@ This endpoint retrieves all available metric paths
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.StaticApi();
-
-var callback = function(error, data, response) {
+let apiInstance = new LoaderoController.StaticApi();
+apiInstance.readMetricPath((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readMetricPath(callback);
+});
 ```
 
 ### Parameters
@@ -140,7 +133,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**['String']**
+**[&#x27;String&#x27;]**
 
 ### Authorization
 
@@ -148,7 +141,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readStaticResource"></a>
@@ -161,28 +154,25 @@ This endpoint retrieves all specified static resource info
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.StaticApi();
+let apiInstance = new LoaderoController.StaticApi();
+let resource = "resource_example"; // String | 
 
-var resource = "resource_example"; // String | 
-
-
-var callback = function(error, data, response) {
+apiInstance.readStaticResource(resource, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readStaticResource(resource, callback);
+});
 ```
 
 ### Parameters
@@ -201,6 +191,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

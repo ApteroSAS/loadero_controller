@@ -14,5 +14,3 @@ Name | Type | Description | Notes
 **relativeStdDev** | [**Statistics**](Statistics.md) |  | [optional] 
 **stdDev** | [**Statistics**](Statistics.md) |  | [optional] 
 **total** | [**Statistics**](Statistics.md) |  | [optional] 
-
-

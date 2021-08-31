@@ -7,10 +7,9 @@ Method | HTTP request | Description
 [**readAllProjectRunParticipants**](ProjectrunparticipantApi.md#readAllProjectRunParticipants) | **GET** /projects/{projectID}/runs/{runID}/participants/ | Get all existing project run participants for run
 [**readProjectRunParticipant**](ProjectrunparticipantApi.md#readProjectRunParticipant) | **GET** /projects/{projectID}/runs/{runID}/participants/{runParticipantID}/ | Get existing project run participant
 
-
 <a name="readAllProjectRunParticipants"></a>
 # **readAllProjectRunParticipants**
-> Object readAllProjectRunParticipants(runID, projectID, opts)
+> InlineResponse2001 readAllProjectRunParticipants(runID, projectID, opts)
 
 Get all existing project run participants for run
 
@@ -18,22 +17,19 @@ This endpoint retrieves all project run participant info.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ProjectrunparticipantApi();
-
-var runID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ProjectrunparticipantApi();
+let runID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -51,15 +47,13 @@ var opts = {
   'filterGroupNumTo': "filterGroupNumTo_example", // String | 
   'filterRecordAudio': "filterRecordAudio_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllProjectRunParticipants(runID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllProjectRunParticipants(runID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -87,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -95,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readProjectRunParticipant"></a>
@@ -108,32 +102,27 @@ This endpoint retrieves project run participant info. Run, run participant must 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ProjectrunparticipantApi();
+let apiInstance = new LoaderoController.ProjectrunparticipantApi();
+let runParticipantID = 789; // Number | 
+let runID = 789; // Number | 
+let projectID = 789; // Number | 
 
-var runParticipantID = 789; // Number | 
-
-var runID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.readProjectRunParticipant(runParticipantID, runID, projectID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readProjectRunParticipant(runParticipantID, runID, projectID, callback);
+});
 ```
 
 ### Parameters
@@ -154,6 +143,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

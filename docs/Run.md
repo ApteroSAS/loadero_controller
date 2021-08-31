@@ -21,5 +21,3 @@ Name | Type | Description | Notes
 **testMode** | **String** |  | [optional] 
 **testName** | **String** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

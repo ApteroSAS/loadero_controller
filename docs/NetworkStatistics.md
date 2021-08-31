@@ -11,5 +11,3 @@ Name | Type | Description | Notes
 **errorsPerSecond** | **Number** |  | [optional] 
 **packets** | **Number** |  | [optional] 
 **packetsPerSecond** | **Number** |  | [optional] 
-
-

@@ -13,5 +13,3 @@ Name | Type | Description | Notes
 **start** | **Date** |  | [optional] 
 **status** | **String** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

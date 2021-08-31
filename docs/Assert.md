@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **path** | **String** |  | 
 **testId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

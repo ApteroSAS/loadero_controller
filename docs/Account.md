@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **lastName** | **String** |  | 
 **superuser** | **Boolean** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

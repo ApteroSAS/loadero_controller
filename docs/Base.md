@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **participantName** | **String** |  | [optional] 
 **participantNum** | **Number** |  | [optional] 
 **profileId** | **Number** |  | [optional] 
-
-

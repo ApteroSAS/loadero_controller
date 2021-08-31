@@ -13,5 +13,3 @@ Name | Type | Description | Notes
 **periodEnd** | **Number** |  | [optional] 
 **periodStart** | **Number** |  | [optional] 
 **status** | **String** |  | [optional] 
-
-

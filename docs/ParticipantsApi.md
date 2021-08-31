@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**readParticipant**](ParticipantsApi.md#readParticipant) | **GET** /projects/{projectID}/tests/{testID}/participants/{participantID}/ | Get existing participant.
 [**updateParticipant**](ParticipantsApi.md#updateParticipant) | **PUT** /projects/{projectID}/tests/{testID}/participants/{participantID}/ | Update existing participant.
 
-
 <a name="createParticipant"></a>
 # **createParticipant**
 > ParticipantBody createParticipant(projectID, testID, opts)
@@ -22,34 +21,29 @@ This endpoint creates new participant with given properties.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'participant': new LoaderoController.ParticipantBody() // ParticipantBody | 
+let apiInstance = new LoaderoController.ParticipantsApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.ParticipantBody(), // ParticipantBody | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.createParticipant(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createParticipant(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -58,8 +52,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**ParticipantBody**](ParticipantBody.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **participant** | [**ParticipantBody**](ParticipantBody.md)|  | [optional] 
 
 ### Return type
 
@@ -84,32 +78,27 @@ This endpoint deletes participant.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
+let apiInstance = new LoaderoController.ParticipantsApi();
+let participantID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
 
-var participantID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.deleteParticipant(participantID, projectID, testID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteParticipant(participantID, projectID, testID, callback);
+});
 ```
 
 ### Parameters
@@ -130,7 +119,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="duplicateParticipant"></a>
@@ -139,40 +128,34 @@ null (empty response body)
 
 Duplicate existing participant
 
-This endpoint duplicates given participant. If no copy name is provided an \"Copy of\" prefix will be applied to the participant name. Group and participant must be previously created.
+This endpoint duplicates given participant. If no copy name is provided an \&quot;Copy of\&quot; prefix will be applied to the participant name. Group and participant must be previously created.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
-
-var participantID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'body': new LoaderoController.Body(), // Body | 
+let apiInstance = new LoaderoController.ParticipantsApi();
+let participantID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.ParticipantIDCopyBody(), // ParticipantIDCopyBody | 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.duplicateParticipant(participantID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.duplicateParticipant(participantID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -182,7 +165,7 @@ Name | Type | Description  | Notes
  **participantID** | **Number**|  | 
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
- **body** | [**Body**](.md)|  | [optional] 
+ **body** | [**ParticipantIDCopyBody**](ParticipantIDCopyBody.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
 
 ### Return type
@@ -200,7 +183,7 @@ Name | Type | Description  | Notes
 
 <a name="readAllParticipants"></a>
 # **readAllParticipants**
-> Object readAllParticipants(projectID, testID, opts)
+> InlineResponse2008 readAllParticipants(projectID, testID, opts)
 
 Get all existing participants for test.
 
@@ -208,22 +191,19 @@ This endpoint retrieves all participant info.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ParticipantsApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -240,15 +220,13 @@ var opts = {
   'filterHasGroup': "filterHasGroup_example", // String | 
   'filterRecordAudio': "filterRecordAudio_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllParticipants(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllParticipants(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -275,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -283,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readParticipant"></a>
@@ -296,35 +274,29 @@ This endpoint retrieves participant info.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
-
-var participantID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ParticipantsApi();
+let participantID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readParticipant(participantID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readParticipant(participantID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -346,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateParticipant"></a>
@@ -359,36 +331,30 @@ This endpoint updates participant with given properties.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ParticipantsApi();
-
-var participantID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'participant': new LoaderoController.ParticipantBody() // ParticipantBody | 
+let apiInstance = new LoaderoController.ParticipantsApi();
+let participantID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.ParticipantBody(), // ParticipantBody | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateParticipant(participantID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateParticipant(participantID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -398,8 +364,8 @@ Name | Type | Description  | Notes
  **participantID** | **Number**|  | 
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**ParticipantBody**](ParticipantBody.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **participant** | [**ParticipantBody**](ParticipantBody.md)|  | [optional] 
 
 ### Return type
 

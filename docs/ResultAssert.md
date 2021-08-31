@@ -13,5 +13,3 @@ Name | Type | Description | Notes
 **resultId** | **Number** |  | [optional] 
 **runAssertId** | **Number** |  | [optional] 
 **status** | **String** |  | [optional] 
-
-

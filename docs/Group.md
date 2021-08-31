@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **participantCount** | **Number** |  | [optional] 
 **testId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

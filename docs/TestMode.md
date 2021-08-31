@@ -8,5 +8,3 @@ Name | Type | Description | Notes
 **disabled** | **Boolean** |  | [optional] 
 **name** | **String** |  | [optional] 
 **value** | **String** |  | [optional] 
-
-

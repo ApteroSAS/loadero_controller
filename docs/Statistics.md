@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **memoryUsage** | **Number** |  | [optional] 
 **networkRx** | [**NetworkStatistics**](NetworkStatistics.md) |  | [optional] 
 **networkTx** | [**NetworkStatistics**](NetworkStatistics.md) |  | [optional] 
-
-

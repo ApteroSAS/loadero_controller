@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **scopes** | **[String]** |  | [optional] 
 **tokenType** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
-
-

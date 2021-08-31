@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **operator** | **String** |  | 
 **property** | **String** |  | 
 **updated** | **Date** |  | [optional] 
-
-

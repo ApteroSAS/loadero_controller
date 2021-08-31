@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**readPrecondition**](PreconditionApi.md#readPrecondition) | **GET** /projects/{projectID}/tests/{testID}/asserts/{assertID}/preconditions/{preconditionID}/ | Read assert precondition info
 [**updatePrecondition**](PreconditionApi.md#updatePrecondition) | **PUT** /projects/{projectID}/tests/{testID}/asserts/{assertID}/preconditions/{preconditionID}/ | Update existing assert precondition
 
-
 <a name="createPrecondition"></a>
 # **createPrecondition**
 > AssertPrecondition createPrecondition(projectID, testID, assertID, opts)
@@ -21,36 +20,30 @@ This endpoint creates new assert precondition with given data.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.PreconditionApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var assertID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'precondition': new LoaderoController.AssertPrecondition() // AssertPrecondition | 
+let apiInstance = new LoaderoController.PreconditionApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let assertID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.AssertPrecondition(), // AssertPrecondition | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.createPrecondition(projectID, testID, assertID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createPrecondition(projectID, testID, assertID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -60,8 +53,8 @@ Name | Type | Description  | Notes
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
  **assertID** | **Number**|  | 
+ **body** | [**AssertPrecondition**](AssertPrecondition.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **precondition** | [**AssertPrecondition**](AssertPrecondition.md)|  | [optional] 
 
 ### Return type
 
@@ -86,34 +79,28 @@ This endpoint deletes assert precondition. Assert and precondition must be previ
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.PreconditionApi();
+let apiInstance = new LoaderoController.PreconditionApi();
+let preconditionID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let assertID = 789; // Number | 
 
-var preconditionID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var assertID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.deletePrecondition(preconditionID, projectID, testID, assertID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deletePrecondition(preconditionID, projectID, testID, assertID, callback);
+});
 ```
 
 ### Parameters
@@ -135,12 +122,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readAllPreconditions"></a>
 # **readAllPreconditions**
-> Object readAllPreconditions(projectID, testID, assertID, opts)
+> InlineResponse2006 readAllPreconditions(projectID, testID, assertID, opts)
 
 Get all existing assert preconditions for assert
 
@@ -148,24 +135,20 @@ This endpoint retrieves all assert precodndition info. Assert must be previously
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.PreconditionApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var assertID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.PreconditionApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let assertID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -173,15 +156,13 @@ var opts = {
   'filterOperator': "filterOperator_example", // String | 
   'filterExpected': "filterExpected_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllPreconditions(projectID, testID, assertID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllPreconditions(projectID, testID, assertID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -200,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -208,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readPrecondition"></a>
@@ -221,37 +202,30 @@ This endpoint retrieves assert precondition info. Assert and precondition must b
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.PreconditionApi();
-
-var preconditionID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var assertID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.PreconditionApi();
+let preconditionID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let assertID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readPrecondition(preconditionID, projectID, testID, assertID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readPrecondition(preconditionID, projectID, testID, assertID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -274,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updatePrecondition"></a>
@@ -287,38 +261,31 @@ This endpoint updates assert precondition with given properties. Assert and prec
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.PreconditionApi();
-
-var preconditionID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var assertID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'precondition': new LoaderoController.AssertPrecondition() // AssertPrecondition | 
+let apiInstance = new LoaderoController.PreconditionApi();
+let preconditionID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let assertID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.AssertPrecondition(), // AssertPrecondition | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.updatePrecondition(preconditionID, projectID, testID, assertID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updatePrecondition(preconditionID, projectID, testID, assertID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -329,8 +296,8 @@ Name | Type | Description  | Notes
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
  **assertID** | **Number**|  | 
+ **body** | [**AssertPrecondition**](AssertPrecondition.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **precondition** | [**AssertPrecondition**](AssertPrecondition.md)|  | [optional] 
 
 ### Return type
 

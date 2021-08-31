@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **isDefault** | **Boolean** |  | [optional] 
 **last4** | **String** |  | [optional] 
-
-

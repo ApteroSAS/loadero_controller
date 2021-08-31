@@ -8,5 +8,3 @@ Name | Type | Description | Notes
 **password** | **String** |  | [optional] 
 **resetPasswordToken** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
-
-

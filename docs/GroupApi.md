@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**readGroup**](GroupApi.md#readGroup) | **GET** /projects/{projectID}/tests/{testID}/groups/{groupID}/ | Read group info
 [**updateGroup**](GroupApi.md#updateGroup) | **PUT** /projects/{projectID}/tests/{testID}/groups/{groupID}/ | Update existing group
 
-
 <a name="createGroup"></a>
 # **createGroup**
 > Group createGroup(projectID, testID, opts)
@@ -22,34 +21,29 @@ This endpoint creates new group with given data.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'group': new LoaderoController.Group() // Group | 
+let apiInstance = new LoaderoController.GroupApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.Group(), // Group | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.createGroup(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createGroup(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -58,8 +52,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**Group**](Group.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **group** | [**Group**](Group.md)|  | [optional] 
 
 ### Return type
 
@@ -84,32 +78,27 @@ This endpoint deletes group. Test and group must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
+let apiInstance = new LoaderoController.GroupApi();
+let groupID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
 
-var groupID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.deleteGroup(groupID, projectID, testID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteGroup(groupID, projectID, testID, callback);
+});
 ```
 
 ### Parameters
@@ -130,7 +119,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="duplicateGroup"></a>
@@ -139,40 +128,34 @@ null (empty response body)
 
 Duplicate existing group
 
-This endpoint duplicates given group. If no copy name is provided an \"Copy of\" prefix will be applied to the group name. Test and group must be previously created.
+This endpoint duplicates given group. If no copy name is provided an \&quot;Copy of\&quot; prefix will be applied to the group name. Test and group must be previously created.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
-
-var groupID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'body': new LoaderoController.Body(), // Body | 
+let apiInstance = new LoaderoController.GroupApi();
+let groupID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.GroupIDCopyBody(), // GroupIDCopyBody | 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.duplicateGroup(groupID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.duplicateGroup(groupID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -182,7 +165,7 @@ Name | Type | Description  | Notes
  **groupID** | **Number**|  | 
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
- **body** | [**Body**](.md)|  | [optional] 
+ **body** | [**GroupIDCopyBody**](GroupIDCopyBody.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
 
 ### Return type
@@ -200,7 +183,7 @@ Name | Type | Description  | Notes
 
 <a name="readAllGroups"></a>
 # **readAllGroups**
-> Object readAllGroups(projectID, testID, opts)
+> InlineResponse2007 readAllGroups(projectID, testID, opts)
 
 Get all existing groups for test
 
@@ -208,22 +191,19 @@ This endpoint retrieves all group info. Test must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.GroupApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -231,15 +211,13 @@ var opts = {
   'filterCountFrom': "filterCountFrom_example", // String | 
   'filterCountTo': "filterCountTo_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllGroups(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllGroups(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -257,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -265,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readGroup"></a>
@@ -278,35 +256,29 @@ This endpoint retrieves group info. Test and group must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
-
-var groupID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.GroupApi();
+let groupID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readGroup(groupID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readGroup(groupID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -328,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateGroup"></a>
@@ -341,36 +313,30 @@ This endpoint updates group with given properties. Test and group must be previo
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.GroupApi();
-
-var groupID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'group': new LoaderoController.Group() // Group | 
+let apiInstance = new LoaderoController.GroupApi();
+let groupID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.Group(), // Group | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateGroup(groupID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateGroup(groupID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -380,8 +346,8 @@ Name | Type | Description  | Notes
  **groupID** | **Number**|  | 
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**Group**](Group.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **group** | [**Group**](Group.md)|  | [optional] 
 
 ### Return type
 

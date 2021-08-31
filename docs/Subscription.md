@@ -11,5 +11,3 @@ Name | Type | Description | Notes
 **paymentPlan** | **String** |  | 
 **paymentStatus** | **String** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

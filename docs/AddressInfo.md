@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **line2** | **String** |  | [optional] 
 **postalCode** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
-
-

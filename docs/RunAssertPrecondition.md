@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **property** | **String** |  | 
 **runAssertId** | **Number** |  | [optional] 
 **updated** | **Date** |  | [optional] 
-
-

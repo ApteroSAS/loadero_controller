@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**readTestRun**](RunApi.md#readTestRun) | **GET** /projects/{projectID}/tests/{testID}/runs/{runID}/ | Read test run info
 [**stopTestRun**](RunApi.md#stopTestRun) | **POST** /projects/{projectID}/tests/{testID}/runs/{runID}/stop/ | Stop test run
 
-
 <a name="createTestRun"></a>
 # **createTestRun**
 > Run createTestRun(testID, projectID, opts)
@@ -20,33 +19,28 @@ This endpoint starts test execution. Project and test must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.RunApi();
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.RunApi();
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.createTestRun(testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createTestRun(testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -67,12 +61,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readAllTestRuns"></a>
 # **readAllTestRuns**
-> Object readAllTestRuns(testID, projectID, opts)
+> InlineResponse200 readAllTestRuns(testID, projectID, opts)
 
 Get all existing test runs for test
 
@@ -80,22 +74,19 @@ This endpoint retrieves all test run info. Project and test must be previously c
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.RunApi();
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.RunApi();
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -117,15 +108,13 @@ var opts = {
   'filterParticipantTimeoutTo': "filterParticipantTimeoutTo_example", // String | 
   'filterActive': "filterActive_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllTestRuns(testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllTestRuns(testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -157,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -165,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readTestRun"></a>
@@ -178,35 +167,29 @@ This endpoint retrieves test run info. Project, test and run must be previously 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.RunApi();
-
-var runID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.RunApi();
+let runID = 789; // Number | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readTestRun(runID, testID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readTestRun(runID, testID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -228,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="stopTestRun"></a>
@@ -241,32 +224,27 @@ This endpoint stops test run. Project, test and run must be previously created. 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.RunApi();
+let apiInstance = new LoaderoController.RunApi();
+let runID = 789; // Number | 
+let testID = 789; // Number | 
+let projectID = 789; // Number | 
 
-var runID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.stopTestRun(runID, testID, projectID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.stopTestRun(runID, testID, projectID, callback);
+});
 ```
 
 ### Parameters
@@ -287,6 +265,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

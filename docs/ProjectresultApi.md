@@ -8,10 +8,9 @@ Method | HTTP request | Description
 [**readProjectResult**](ProjectresultApi.md#readProjectResult) | **GET** /projects/{projectID}/runs/{runID}/results/{resultID}/ | Read single project run result
 [**readProjectResultStatistics**](ProjectresultApi.md#readProjectResultStatistics) | **GET** /projects/{projectID}/runs/{runID}/results/statistics/ | Read all project result statistics
 
-
 <a name="readAllProjectResults"></a>
 # **readAllProjectResults**
-> Object readAllProjectResults(runID, projectID, opts)
+> InlineResponse2002 readAllProjectResults(runID, projectID, opts)
 
 Read all project run results
 
@@ -19,22 +18,19 @@ This endpoint retrieves all project run results. Project, run must be previously
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ProjectresultApi();
-
-var runID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ProjectresultApi();
+let runID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -59,15 +55,13 @@ var opts = {
   'filterSeleniumResult': "filterSeleniumResult_example", // String | 
   'filterDone': "filterDone_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllProjectResults(runID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllProjectResults(runID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -102,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -110,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readProjectResult"></a>
@@ -123,35 +117,29 @@ This endpoint retrieves single project run result info. Project, run and result 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ProjectresultApi();
-
-var resultID = 789; // Number | 
-
-var runID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ProjectresultApi();
+let resultID = 789; // Number | 
+let runID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readProjectResult(resultID, runID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readProjectResult(resultID, runID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -173,12 +161,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readProjectResultStatistics"></a>
 # **readProjectResultStatistics**
-> Object readProjectResultStatistics(runID, projectID, opts)
+> InlineResponse2003 readProjectResultStatistics(runID, projectID, opts)
 
 Read all project result statistics
 
@@ -186,33 +174,28 @@ This endpoint retrieves all project result statisctics. Project and run must be 
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.ProjectresultApi();
-
-var runID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.ProjectresultApi();
+let runID = 789; // Number | 
+let projectID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readProjectResultStatistics(runID, projectID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readProjectResultStatistics(runID, projectID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -225,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -233,6 +216,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

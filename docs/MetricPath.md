@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **ID** | **Number** |  | [optional] 
 **key** | **String** |  | [optional] 
 **parentID** | **Number** |  | [optional] 
-
-

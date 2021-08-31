@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **paymentMethods** | [**[PaymentMethod]**](PaymentMethod.md) |  | [optional] 
 **subscriptionId** | **Number** |  | [optional] 
 **vatInfo** | [**VatInfo**](VatInfo.md) |  | [optional] 
-
-

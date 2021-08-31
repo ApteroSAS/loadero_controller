@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**readAssert**](AssertApi.md#readAssert) | **GET** /projects/{projectID}/tests/{testID}/asserts/{assertID}/ | Read assert info
 [**updateAssert**](AssertApi.md#updateAssert) | **PUT** /projects/{projectID}/tests/{testID}/asserts/{assertID}/ | Update existing assert
 
-
 <a name="createAssert"></a>
 # **createAssert**
 > Assert createAssert(projectID, testID, opts)
@@ -22,34 +21,29 @@ This endpoint creates new assert with given data.
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'assert': new LoaderoController.Assert() // Assert | 
+let apiInstance = new LoaderoController.AssertApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.Assert(), // Assert | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.createAssert(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createAssert(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -58,8 +52,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**Assert**](Assert.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **assert** | [**Assert**](Assert.md)|  | [optional] 
 
 ### Return type
 
@@ -84,32 +78,27 @@ This endpoint deletes assert. Test and assert must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
+let apiInstance = new LoaderoController.AssertApi();
+let assertID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
 
-var assertID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-
-var callback = function(error, data, response) {
+apiInstance.deleteAssert(assertID, projectID, testID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteAssert(assertID, projectID, testID, callback);
+});
 ```
 
 ### Parameters
@@ -130,7 +119,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="duplicateAssert"></a>
@@ -143,35 +132,29 @@ This endpoint duplicates given assert. Test and assert must be previously create
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
-
-var assertID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.AssertApi();
+let assertID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.duplicateAssert(assertID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.duplicateAssert(assertID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -193,12 +176,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readAllAsserts"></a>
 # **readAllAsserts**
-> Object readAllAsserts(projectID, testID, opts)
+> InlineResponse2005 readAllAsserts(projectID, testID, opts)
 
 Get all existing asserts for test
 
@@ -206,22 +189,19 @@ This endpoint retrieves all assert info. Test must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.AssertApi();
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'limit': 789, // Number | 
   'offset': 789, // Number | 
   'describe': "describe_example", // String | 
@@ -229,15 +209,13 @@ var opts = {
   'filterOperator': "filterOperator_example", // String | 
   'filterExpected': "filterExpected_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAllAsserts(projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAllAsserts(projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -255,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -263,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="readAssert"></a>
@@ -276,35 +254,29 @@ This endpoint retrieves assert info. Test and assert must be previously created
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
-
-var assertID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
+let apiInstance = new LoaderoController.AssertApi();
+let assertID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
   'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.readAssert(assertID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.readAssert(assertID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -326,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateAssert"></a>
@@ -339,36 +311,30 @@ This endpoint updates assert with given properties. Test and assert must be prev
 
 ### Example
 ```javascript
-var LoaderoController = require('loadero_controller');
-var defaultClient = LoaderoController.ApiClient.instance;
+import {LoaderoController} from 'loadero_controller';
+let defaultClient = LoaderoController.ApiClient.instance;
 
 // Configure API key authorization: ApiKeyAuth
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-var apiInstance = new LoaderoController.AssertApi();
-
-var assertID = 789; // Number | 
-
-var projectID = 789; // Number | 
-
-var testID = 789; // Number | 
-
-var opts = { 
-  'describe': "describe_example", // String | 
-  'assert': new LoaderoController.Assert() // Assert | 
+let apiInstance = new LoaderoController.AssertApi();
+let assertID = 789; // Number | 
+let projectID = 789; // Number | 
+let testID = 789; // Number | 
+let opts = { 
+  'body': new LoaderoController.Assert(), // Assert | 
+  'describe': "describe_example" // String | 
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateAssert(assertID, projectID, testID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateAssert(assertID, projectID, testID, opts, callback);
+});
 ```
 
 ### Parameters
@@ -378,8 +344,8 @@ Name | Type | Description  | Notes
  **assertID** | **Number**|  | 
  **projectID** | **Number**|  | 
  **testID** | **Number**|  | 
+ **body** | [**Assert**](Assert.md)|  | [optional] 
  **describe** | **String**|  | [optional] 
- **assert** | [**Assert**](Assert.md)|  | [optional] 
 
 ### Return type
 
