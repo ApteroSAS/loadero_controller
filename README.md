@@ -97,9 +97,11 @@ var LoaderoController = require('loadero_controller');
 
 var defaultClient = LoaderoController.ApiClient.instance;
 
-// Configure OAuth2 access token for authorization: oauth2
-var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = "YOUR ACCESS TOKEN"
+// Configure API key authorization: ApiKeyAuth
+var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+ApiKeyAuth.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKeyAuth.apiKeyPrefix['LoaderoAuth'] = "Token"
 
 var api = new LoaderoController.AssertApi()
 
@@ -264,86 +266,13 @@ Class | Method | HTTP request | Description
 ## Documentation for Authorization
 
 
+### ApiKeyAuth
+
+- **Type**: API key
+- **API key parameter name**: LoaderoAuth
+- **Location**: HTTP header
+
 ### basic
 
 - **Type**: HTTP basic authentication
-
-### oauth2
-
-- **Type**: OAuth
-- **Flow**: password
-- **Authorization URL**: 
-- **Scopes**: 
-  - ACCOUNTS_READ_ALL: read all active account data
-  - ACCOUNT_CREATE: register new account
-  - ACCOUNT_DELETE: delete existing account
-  - ACCOUNT_READ: read existing account data
-  - ACCOUNT_RESET_PASSWORD: reset account password
-  - ACCOUNT_UPDATE: update existing account data
-  - ASSERTS_READ_ALL: read all existing asserts
-  - ASSERT_CREATE: create new assert
-  - ASSERT_DELETE: delete existing assert
-  - ASSERT_READ: read existing assert
-  - ASSERT_UPDATE: update existing assert
-  - AWS_INFO_CREATE: create new aws info
-  - AWS_INFO_DELETE: delete existing aws info
-  - AWS_INFO_READ: read existing aws info
-  - AWS_INFO_UPDATE: update existing aws info
-  - BILLING_DELETE: delete billing info data
-  - BILLING_READ: read existing billing info
-  - BILLING_UPDATE: update existing billing info data
-  - FILE_READ: read existing file
-  - GROUPS_READ_ALL: read all existing groups
-  - GROUP_CREATE: create new group
-  - GROUP_DELETE: delete existing group
-  - GROUP_READ: read existing group
-  - GROUP_UPDATE: update existing group
-  - INVITED_MEMBERS_READ_ALL: read all existing project invited members
-  - INVITED_MEMBER_DELETE: delete existing project invited member
-  - INVITED_MEMBER_READ: read existing project invited member
-  - INVITED_MEMBER_UPDATE: update existing project invited member
-  - MEMBERS_READ_ALL: read all existing project members
-  - MEMBER_CREATE: create new project member
-  - MEMBER_DELETE: delete existing project member
-  - MEMBER_READ: read existing project member
-  - MEMBER_UPDATE: update existing project member
-  - PARTICIPANTS_READ_ALL: read all existing participants
-  - PARTICIPANT_CREATE: create new participant
-  - PARTICIPANT_DELETE: delete existing participant
-  - PARTICIPANT_READ: read existing participant
-  - PARTICIPANT_UPDATE: update existing participant
-  - PRECONDITIONS_READ_ALL: read all existing assert preconditions
-  - PRECONDITION_CREATE: create new assert precondition
-  - PRECONDITION_DELETE: delete existing assert precondition
-  - PRECONDITION_READ: read existing assert precondition
-  - PRECONDITION_UPDATE: update existing assert precondition
-  - PROJECTS_READ_ALL: read all existing projects for account
-  - PROJECT_CREATE: create new project
-  - PROJECT_DELETE: delete existing project
-  - PROJECT_READ: read existing project
-  - PROJECT_TOKENS_READ_ALL: read all existing project tokens
-  - PROJECT_TOKEN_CREATE: create new project token
-  - PROJECT_TOKEN_DELETE: delete existing project tokens
-  - PROJECT_UPDATE: update existing project
-  - RESULTS_READ_ALL: read all existing run results
-  - RESULT_READ: read existing run result
-  - RESULT_STATISTICS_READ: read result statistics for test run
-  - STATICS_READ_ALL: read all static resource values
-  - STATIC_READ: read all existing specified resource values
-  - STATIC_TYPES_READ_ALL: read all static type values
-  - SUBSCRIPTION_CREATE: create new subscription
-  - SUBSCRIPTION_DELETE: delete existing subscription
-  - SUBSCRIPTION_READ: read existing subscription data
-  - SUBSCRIPTION_UPDATE: update existing subscription data
-  - TESTS_READ_ALL: read all existing tests
-  - TEST_CREATE: create new test
-  - TEST_DELETE: delete existing test
-  - TEST_READ: read existing test
-  - TEST_RUNS_READ_ALL: read all existing test runs
-  - TEST_RUN_CREATE: create and launch new test run
-  - TEST_RUN_PARTICIPANTS_READ_ALL: read all existing run participants
-  - TEST_RUN_PARTICIPANT_READ: read existing run participant
-  - TEST_RUN_READ: read existing test run
-  - TEST_RUN_STOP: stop existing test run
-  - TEST_UPDATE: update existing test
 

@@ -56,8 +56,8 @@
      * @type {Array.<String>}
      */
     this.authentications = {
-      'basic': {type: 'basic'},
-      'oauth2': {type: 'oauth2'}
+      'ApiKeyAuth': {type: 'apiKey', 'in': 'header', name: 'LoaderoAuth'},
+      'basic': {type: 'basic'}
     };
     /**
      * The default HTTP headers to be included for all API calls.

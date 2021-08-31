@@ -96,7 +96,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ParticipantBody;
@@ -157,7 +157,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -224,7 +224,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ParticipantBody;
@@ -311,7 +311,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
@@ -377,7 +377,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ParticipantBody;
@@ -444,7 +444,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ParticipantBody;

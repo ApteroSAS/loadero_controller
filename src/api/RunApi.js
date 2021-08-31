@@ -95,7 +95,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Run;
@@ -192,7 +192,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
@@ -258,7 +258,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = RunBody;
@@ -319,7 +319,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = ['ApiKeyAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
