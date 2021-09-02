@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface ValidationResponse
+ */
+export interface ValidationResponse {
+    /**
+     * Status code of error
+     * @type {number}
+     * @memberof ValidationResponse
+     */
+    code?: any;
+    /**
+     * List of validation errors
+     * @type {{ [key, string]: Array&lt;string&gt;;}}
+     * @memberof ValidationResponse
+     */
+    errors?: any;
+}

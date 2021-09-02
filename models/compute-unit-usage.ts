@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface ComputeUnitUsage
+ */
+export interface ComputeUnitUsage {
+    /**
+     * 
+     * @type {number}
+     * @memberof ComputeUnitUsage
+     */
+    included?: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ComputeUnitUsage
+     */
+    used?: any;
+}

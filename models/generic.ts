@@ -11,6 +11,28 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface Generic
+ */
+export interface Generic {
+    /**
+     * 
+     * @type {Date}
+     * @memberof Generic
+     */
+    created?: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof Generic
+     */
+    id?: any;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Generic
+     */
+    updated?: any;
+}

@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface Metrics
+ */
+export interface Metrics {
+    /**
+     * 
+     * @type {MetricList}
+     * @memberof Metrics
+     */
+    machine?: any;
+    /**
+     * 
+     * @type {MetricList}
+     * @memberof Metrics
+     */
+    webrtc?: any;
+}

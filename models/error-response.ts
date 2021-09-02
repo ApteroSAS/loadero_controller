@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface ErrorResponse
+ */
+export interface ErrorResponse {
+    /**
+     * Status code of error
+     * @type {number}
+     * @memberof ErrorResponse
+     */
+    code?: any;
+    /**
+     * Error description
+     * @type {string}
+     * @memberof ErrorResponse
+     */
+    error?: any;
+}

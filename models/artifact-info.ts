@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface ArtifactInfo
+ */
+export interface ArtifactInfo {
+    /**
+     * 
+     * @type {string}
+     * @memberof ArtifactInfo
+     */
+    error?: any;
+    /**
+     * 
+     * @type {Array&lt;string&gt;}
+     * @memberof ArtifactInfo
+     */
+    paths?: any;
+}

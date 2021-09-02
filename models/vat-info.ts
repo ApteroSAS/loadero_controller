@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface VatInfo
+ */
+export interface VatInfo {
+    /**
+     * 
+     * @type {string}
+     * @memberof VatInfo
+     */
+    type?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof VatInfo
+     */
+    value?: any;
+}

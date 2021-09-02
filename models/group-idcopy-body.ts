@@ -11,6 +11,16 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface GroupIDCopyBody
+ */
+export interface GroupIDCopyBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupIDCopyBody
+     */
+    name?: any;
+}

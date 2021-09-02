@@ -11,6 +11,28 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface InlineResponse2007
+ */
+export interface InlineResponse2007 {
+    /**
+     * 
+     * @type {Filterer}
+     * @memberof InlineResponse2007
+     */
+    filter?: any;
+    /**
+     * 
+     * @type {Pagination}
+     * @memberof InlineResponse2007
+     */
+    pagination?: any;
+    /**
+     * 
+     * @type {Array&lt;Group&gt;}
+     * @memberof InlineResponse2007
+     */
+    results?: any;
+}

@@ -11,6 +11,22 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-export * from "./api";
-export * from "./configuration";
-
+/**
+ * 
+ * @export
+ * @interface InlineResponse2003
+ */
+export interface InlineResponse2003 {
+    /**
+     * 
+     * @type {Array&lt;AssertOverview&gt;}
+     * @memberof InlineResponse2003
+     */
+    asserts?: any;
+    /**
+     * 
+     * @type {MachineStats}
+     * @memberof InlineResponse2003
+     */
+    machineStats?: any;
+}
