@@ -67,9 +67,9 @@ export const PreconditionApiAxiosParamCreator = function (configuration?: Config
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (describe !== undefined) {
@@ -141,9 +141,9 @@ export const PreconditionApiAxiosParamCreator = function (configuration?: Config
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -207,9 +207,9 @@ export const PreconditionApiAxiosParamCreator = function (configuration?: Config
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (limit !== undefined) {
@@ -298,9 +298,9 @@ export const PreconditionApiAxiosParamCreator = function (configuration?: Config
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (describe !== undefined) {
@@ -370,9 +370,9 @@ export const PreconditionApiAxiosParamCreator = function (configuration?: Config
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (describe !== undefined) {
