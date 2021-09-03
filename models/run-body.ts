@@ -106,13 +106,13 @@ export interface RunBody {
      * @type {number}
      * @memberof RunBody
      */
-    successRate?: any;
+    success_rate?: any;
     /**
      * 
      * @type {number}
      * @memberof RunBody
      */
-    testId?: any;
+    test_id?: any;
     /**
      * 
      * @type {string}
