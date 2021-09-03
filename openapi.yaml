@@ -9779,5 +9779,5 @@ components:
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
-      name: LoaderoAuth
+      name: Authorization
       in: header
