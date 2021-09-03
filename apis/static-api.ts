@@ -226,7 +226,7 @@ export const StaticApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readAllStatics(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<{ [key, string]: Array<BaseClassificator>;}>> {
+        async readAllStatics(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
             const localVarAxiosArgs = await StaticApiAxiosParamCreator(configuration).readAllStatics(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -284,7 +284,7 @@ export const StaticApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readAllStatics(options?: any): AxiosPromise<{ [key, string]: Array<BaseClassificator>;}> {
+        readAllStatics(options?: any): AxiosPromise<any> {
             return StaticApiFp(configuration).readAllStatics(options).then((request) => request(axios, basePath));
         },
         /**
