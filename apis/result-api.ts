@@ -88,9 +88,9 @@ export const ResultApiAxiosParamCreator = function (configuration?: Configuratio
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (limit !== undefined) {
@@ -247,9 +247,9 @@ export const ResultApiAxiosParamCreator = function (configuration?: Configuratio
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (describe !== undefined) {
@@ -312,9 +312,9 @@ export const ResultApiAxiosParamCreator = function (configuration?: Configuratio
             // authentication ApiKeyAuth required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? await configuration.apiKey("LoaderoAuth")
+                    ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["LoaderoAuth"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (describe !== undefined) {
